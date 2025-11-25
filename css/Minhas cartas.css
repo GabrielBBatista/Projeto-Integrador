@@ -6,7 +6,7 @@ body {
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma,Verdana, sans-serif,;
-    background: #18181b url('dark-red-hexagonal-background-free-vector.jpg') center;
+    background: #18181b url('../imagens/dark-red-hexagonal-background-free-vector.jpg') center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@ nav a {
 
 /* === FOOTER === */
 .footer {
-    background-image: url('360_F_453630770_N9UkWkDVZGC9AA91ohlKhdjDMMNhBQbU.jpg');
+    background-image: url('../imagens/360_F_453630770_N9UkWkDVZGC9AA91ohlKhdjDMMNhBQbU.jpg');
     background-size: cover;
     background-position: center;
     color: #ffffff;
