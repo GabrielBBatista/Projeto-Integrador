@@ -1,0 +1,191 @@
+html,
+body {
+    height: 100%;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(dark-purple-hexagonal-background-free-vector\ \(1\).jpg);
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: rgb(212, 130, 236);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(160, 132, 132, 0.1);
+    border-bottom: 4px solid rgb(255, 255, 255);
+
+}
+
+header img {
+    height: 50px;
+}
+
+.logo img {
+    transition: transform 0.25s ease;
+    display: inline-block;
+}
+
+.logo:hover img {
+    transform: scale(1.15);
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Dropdown do header */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dropdown-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: rgba(255, 255, 255, 0.98);
+    min-width: 160px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: #222;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #f0f0f0
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #bc7ef7;
+}
+
+.cartas-section {
+    padding: 0, 5px 20px;
+    text-align: center;
+}
+
+.cartas-section h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.cartas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carta {
+    background-image: url(157835-white-background.jpg);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.carta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgb(77, 28, 255);
+}
+
+.carta img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.carta h3 {
+    padding: 10px;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+footer {
+    border-top: 4px solid#ffffff;
+    background-color: rgb(119, 73, 211);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .cartas-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .carta {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Telas médias (tablets) */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+}

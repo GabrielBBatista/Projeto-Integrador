@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝙋𝙤𝙠𝙚́𝙢𝙤𝙣 𝙈𝙚𝙩𝙖 </title>
+    <link rel="shortcut icon" href="Image__1_-removebg-preview 1 (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="Top-5-card-2025.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"><img src="image.webp" width="70" height="60" alt="Logo"></div>
+        <nav>
+            <h1><a href="Top-5-card-2025.html">Top 5 card 2025</a></h1>
+        </nav>
+        <div class="dropdown">
+            <button class="dropdown-button" id="dropdownBtn">Menu ▾</button>
+            <div class="dropdown-content" id="dropdownContent">
+                <a href="Tela-inicial.html">Página inicial</a>
+                <a href="Minhas cartas.html">Minhas cartas</a>
+                <a href="Monte seu deck.html">Monte seu deck</a>
+
+                <!-- opção 'Sair' removida -->
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Pokémon TCG Pocket</h1>
+        <p>As cartas mais poderosas e raras do jogo no seu deck!</p>
+    </section>
+
+    <section class="cartas-section" id="cartas">
+        <h2>Top Cartas do Pokémon TCG Pocket</h2>
+        <div class="cartas-grid">
+            <div class="carta">
+                <img src="https://s3.duellinksmeta.com/pkm_img/cards/6799c316169202e5d7e6a6fc_w260.webp"
+                    alt="Charizard VMAX">
+                <h3>Darkai EX</h3>
+            </div>
+            <div class="carta">
+                <img src="https://s3.duellinksmeta.com/pkm_img/cards/67e39846575eceb838a255ea_w360.webp"
+                    alt="Pikachu VMAX">
+                <h3>Giratina EX</h3>
+            </div>
+            <div class="carta">
+                <img src="https://s3.duellinksmeta.com/pkm_img/cards/672181dfa61389c23bbf94bd_w260.webp"
+                    alt="Gardevoir ex">
+                <h3>Mewtwo ex</h3>
+            </div>
+            <div class="carta">
+                <img src="https://s3.duellinksmeta.com/pkm_img/cards/67dd681fa1b6092a3c64bac2_w360.webp"
+                    alt="Tapu Lele GX">
+                <h3>Charizard ex</h3>
+            </div>
+            <div class="carta">
+                <img src="https://s3.duellinksmeta.com/pkm_img/cards/671ef1105279bcfb3c1e25df_w260.webp">
+                <h3>Pikachu ex</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Pokémon TCG Pocket</p>
+    </footer>
+    <!-- Settings modal for melhorescartas.html -->
+    <div id="settingsModalMain"
+        style="display:none; position:fixed; inset:0; align-items:center; justify-content:center; background:rgba(73, 73, 73, 0.623); z-index:1200;">
+        <div
+            style="background:#f398ff; padding:20px; border-radius:10px; width:320px; max-width:90%; box-shadow:0 8px 24px rgba(0,0,0,0.3); color:#111;">
+            <h3 style="margin:0 0 12px 0;">Cores</h3>
+            <label>Cor do fundo: <input type="color" id="m_bgColor" value="#ffffff"></label>
+            <br><br>
+            <label>Cor do texto: <input type="color" id="m_textColor" value="#ffffff"></label>
+            <br><br>
+            <label>Cor do header: <input type="color" id="m_headerColor" value="#d482ec"></label>
+            <br><br>
+            <label>Cor do footer: <input type="color" id="m_footerColor" value="#7749d3"></label>
+            <br><br>
+            <div style="text-align:right;"><button id="m_closeSettings"
+                    style="padding:8px 12px; border-radius:6px; border:none; background:#7c3aed; color:#fff; cursor:pointer;">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('dropdownBtn');
+        const content = document.getElementById('dropdownContent');
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+        // fecha ao clicar fora
+        document.addEventListener('click', function () {
+            content.style.display = 'none';
+        });
+        // acessibilidade: fecha com ESC
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { content.style.display = 'none'; document.getElementById('settingsModalMain').style.display = 'none'; } });
+
+        // --- Settings modal logic for melhorescartas.html ---
+        const configBtnMain = document.getElementById('configBtnMain');
+        const settingsModalMain = document.getElementById('settingsModalMain');
+        const m_bgColor = document.getElementById('m_bgColor');
+        const m_textColor = document.getElementById('m_textColor');
+        const m_headerColor = document.getElementById('m_headerColor');
+        const m_footerColor = document.getElementById('m_footerColor');
+        const m_closeSettings = document.getElementById('m_closeSettings');
+
+        configBtnMain.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            settingsModalMain.style.display = 'flex';
+        });
+        m_closeSettings.addEventListener('click', function () { settingsModalMain.style.display = 'none'; });
+        settingsModalMain.addEventListener('click', function (e) { if (e.target === settingsModalMain) settingsModalMain.style.display = 'none'; });
+
+        // realtime update handlers
+        m_bgColor.addEventListener('input', function (e) { document.body.style.background = e.target.value; document.body.style.backgroundImage = ''; });
+        m_textColor.addEventListener('input', function (e) { document.body.style.color = e.target.value; });
+        m_headerColor.addEventListener('input', function (e) { document.querySelector('header').style.backgroundColor = e.target.value; });
+        m_footerColor.addEventListener('input', function (e) { document.querySelector('footer').style.backgroundColor = e.target.value; });
+    </script>
+
+</body>
+
+</html>

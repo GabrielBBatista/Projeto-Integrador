@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝙋𝙤𝙠𝙚́𝙢𝙤𝙣 𝙈𝙚𝙩𝙖</title>
+    <link rel="shortcut icon" href="Image__1_-removebg-preview 1 (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="Pokemon cadastro.css">
+</head>
+
+<body>
+
+    <!-- === Barra de Tarefas === -->
+    <header>
+        <div class="logo"><img src="image.webp" width="60" height="10" alt="Logo"></div>
+        <nav>
+            <a href="Tela-inicial.html">Página inicial</a>
+            <a href="Minhas cartas.html">Minhas cartas</a>
+            <a href="Monte seu deck.html">Monte seu deck</a>
+            <a href="Top-5-card-2025.html">Top 5 card 2025</a>
+        </nav>
+        <div class="dropdown">
+            <button class="dropdown-btn" id="dropdownBtnTest">Menu ▼</button>
+            <div class="dropdown-content" id="dropdownContentTest">
+                <a href="Tela-inicial.html">Página inicial</a>
+                <a href="Minhas cartas.html">Minhas cartas</a>
+                <a href="Monte seu deck.html">Monte seu deck</a>
+                <a href="Top-5-card-2025.html">Top 5 card 2025</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- === Página de Cadastro === -->
+    <div class="cadastro-container" id="cadastroContainer">
+        <h2>Treinador Pokémon</h2>
+        <p>Crie sua conta para começar sua jornada!</p>
+        <input type="text" id="nome" placeholder="Nome de Treinador" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button onclick="cadastrar()">Cadastrar</button>
+    </div>
+
+    <script>
+        /* === Script da Barra === */
+        const btnTest = document.getElementById('dropdownBtnTest');
+        const contentTest = document.getElementById('dropdownContentTest');
+        btnTest.addEventListener('click', function (e) {
+            e.stopPropagation();
+            contentTest.style.display = contentTest.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function () {
+            contentTest.style.display = 'none';
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') contentTest.style.display = 'none';
+        });
+
+        /* === Script do Cadastro === */
+        // Se o usuário já estiver cadastrado, redireciona para a página inicial
+        if (localStorage.getItem("treinadorPokemon")) {
+            window.location.href = "./Tela-inicial.html"; // <-- troque aqui pelo nome da sua página inicial
+        }
+
+        function cadastrar() {
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const senha = document.getElementById("senha").value.trim();
+
+            if (nome && email && senha) {
+                const dados = { nome, email, senha };
+                localStorage.setItem("treinadorPokemon", JSON.stringify(dados));
+                alert("Bem-vindo, " + nome + "! Sua jornada começou!");
+                window.location.href = "./Tela-inicial.html"; // <-- troque aqui também
+            } else {
+                alert("Por favor, preencha todos os campos!");
+            }
+        }
+    </script>
+</body>
+
+</html>

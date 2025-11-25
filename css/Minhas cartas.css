@@ -1,0 +1,195 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma,Verdana, sans-serif,;
+    background: #18181b url('dark-red-hexagonal-background-free-vector.jpg') center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* === HEADER === */
+header {
+    background-color: rgb(231, 35, 28);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    border-bottom: 4px solid #e4ce55;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* === DROPDOWN === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s ease;
+}
+
+.dropdown-button:hover {
+    background-color: #f18cf1;
+    box-shadow: 0 0 8px rgb(216, 114, 199);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: rgba(255, 255, 255, 0.98);
+    min-width: 160px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: #222;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #f0f0f0;
+}
+
+/* === GRID DE CARTAS === */
+.cartas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carta {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.carta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 18px 38px rgba(255, 0, 0, 0.986);
+}
+
+.carta img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* === FOOTER === */
+.footer {
+    background-image: url('360_F_453630770_N9UkWkDVZGC9AA91ohlKhdjDMMNhBQbU.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1.1em;
+    margin-top: 40px;
+}
+
+/* === LOGO === */
+.logo img {
+    transition: transform 0.25s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.15);
+}
+
+/* === RESPONSIVIDADE === */
+
+/* Telas intermediárias (tablets) */
+@media (max-width: 900px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .carta {
+        height: 180px;
+    }
+
+    .cartas-grid {
+        gap: 18px;
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+
+    header img {
+        height: 40px;
+    }
+
+
+    .dropdown-button {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        margin: 0 8px;
+    }
+
+    .cartas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 20px 10px;
+    }
+
+    .carta {
+        height: 150px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+}

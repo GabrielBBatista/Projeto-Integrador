@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>𝙋𝙤𝙠𝙚́𝙢𝙤𝙣 𝙈𝙚𝙩𝙖</title>
+    <link rel="shortcut icon" href="Image__1_-removebg-preview 1 (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="Monte seu deck.css">
+</head>
+
+<body>
+
+    <!-- Barra de cima -->
+    <header>
+        <div class="logo"><img src="image.webp" width="70" height="60" alt="Logo"></div>
+        <nav>
+            <h1><a href="Monte seu deck.html">Deckbuilder</a></h1>
+        </nav>
+        <div class="dropdown">
+            <button class="dropdown-button" id="dropdownBtnTest">Menu ▾</button>
+            <div class="dropdown-content" id="dropdownContentTest">
+
+                <a href="Tela-inicial.html">Página inicial</a>
+                <a href="Minhas cartas.html">Minhas cartas</a>
+                
+                <a href="Top-5-card-2025.html">Top 5 card 2025</a>
+            </div>
+        </div>
+    </header>
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+
+        <!-- Lista de cartas -->
+        <div class="container">
+            <h4>Cartas disponíveis</h4>
+            <input type="text" id="search" class="search" placeholder="Buscar carta...">
+            <div class="scroll-container">
+                <div class="card-list" id="cardList"></div>
+            </div>
+        </div>
+
+        <!-- Deck -->
+        <div class="container">
+            <h4>Deck Atual (<span id="deckCount">0</span> cartas)</h4>
+            <!-- caixa invisível simulando a barra de pesquisa para alinhar os dois decks-->
+            <div style="height: 1px;"></div>
+            <button onclick="SalvarDeck()">Salvar</button>
+            <div class="scroll-container">
+
+                <div class="deck-list" id="deckList"></div>
+            </div>
+        </div>
+    </div>
+    <!--Barra de anotações-->
+    <div class="container">
+        <h2>Anotações</h2>
+        <h4>Escreva suas anotações e estratégias aqui!</h4>
+        <button onclick="salvarNotas()">Salvar</button>
+        <textarea class="notes" id="notes" placeholder="Escreva suas anotações..."></textarea>
+    </div>
+    <script src="pokedeck.js">
+
+    </script>
+
+    <footer>Pokémon Tcg Pokcet</footer>
+</body>
+
+</html>
